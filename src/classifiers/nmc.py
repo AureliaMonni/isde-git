@@ -34,8 +34,15 @@ class NMC(object):
     def class_labels(self):
         return self._class_labels
 
-    def fit(self, xtr, ytr):
-        pass
+    def fit(self, x, y):
+        """Compute the average centroid for each class."""
+
+        self._class_labels = np.unique(y)
+
+        self._centroids = np.zeros(shape=(self._class_labels.size, x.shape[1]))
+
+        for i, label in enumerate(self._class_labels):
+            self._centroids[i, :] = x[y == label, :].mean(axis=0)
 
     def predict(self, xts):
         pass
