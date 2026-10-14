@@ -27,10 +27,6 @@ def load_data(filename):
 
 
 def split_data(x, y, tr_fraction=0.5):
-    """
-    Split the data x, y into two random subsets
-
-    """
     n_samples = x.shape[0]
     n_tr = int(tr_fraction * n_samples)
     n_ts = n_samples - n_tr
