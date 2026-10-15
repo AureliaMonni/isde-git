@@ -48,3 +48,4 @@ class NMC(object):
         dist = euclidean_distances(xts, self._centroids)
         y = self._class_labels[np.argmin(dist, axis=1)]
         return y
+
