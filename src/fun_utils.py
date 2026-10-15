@@ -2,7 +2,7 @@ from pandas import read_csv
 import numpy as np
 
 
-def load_data(filename):
+def load_data(csv_filename):
     """
     Load data from a csv file
 
@@ -19,7 +19,8 @@ def load_data(filename):
     y : ndarray
         the labels of each sample.
     """
-    data = read_csv(filename)
+    
+    data = read_csv(csv_filename)
     z = np.array(data)
     y = z[:, 0]
     X = z[:, 1:]
